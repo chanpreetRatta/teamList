@@ -11,19 +11,43 @@ hr{
     color: rgba(180, 180, 180, .5);
 }
 
+.container{
+    display: flex;
+}
+
 .selecting-players-container, .selected-players-container{
     margin: 5%;
+    width: 40%;
 }
 
 .player-card{
-    display: flex;
-    justify-content: left;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 10fr 1fr;
+    grid-template-areas: 
+        "name action"
+        "id   action";
     margin-bottom: 1em;
-    cursor: pointer;
+    cursor: pointer;   
+}
+
+.player-card > .player-name{
+    grid-area: name;
+    grid-column: 1 / 2;
 }
 
 .player-card > .player-id{
+    grid-area: id;
     font-size: .8em;
     color: rgba(0, 0, 0, 0.643);
+}
+
+.player-card > .player-action{
+    grid-area: action;
+    background-color: rgb(1, 107, 1);
+    color: azure;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
