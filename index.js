@@ -1,5 +1,10 @@
-const playerContainer = document.querySelector(".selecting-players-container");
+const playersListContainer = document.querySelector(".players-list");
+const selectedPlayersContainer = document.querySelector(
+  ".selected-players-list"
+);
+
 let playersListArray = [];
+let selectedPlayer = [];
 async function fetchPlayer(url) {
   let playersList;
   try {
@@ -13,7 +18,8 @@ async function fetchPlayer(url) {
   return playersList;
 }
 
-function renderPlayerList(list) {
+function renderPlayerList(list, target) {
+  target.innerHTML = "";
   list.forEach((item) => {
     const playerName = document.createElement("div");
     const playerId = document.createElement("div");
@@ -31,8 +37,20 @@ function renderPlayerList(list) {
     playerAction.textContent = "a";
 
     playerCard.append(playerName, playerId, playerAction);
-    playerContainer.append(playerCard);
+    target.append(playerCard);
   });
+}
+
+function selectPlayer(event) {
+  let selectingPlayerCard = event.target.parentElement;
+  if (selectingPlayerCard.classList[0] !== "player-card") return;
+
+  let player = playersListArray.find(
+    (card) => card["Player Name"] === selectingPlayerCard.children[0].innerHTML
+  );
+
+  selectedPlayer.push(player);
+  renderPlayerList(selectedPlayer, selectedPlayersContainer);
 }
 
 //fetch the list of the players and spread the array into playerListArray
@@ -40,8 +58,8 @@ fetchPlayer(
   "./6th Division North Vancouver III - British Columbia Mainland Cricket League.json"
 ).then((player) => {
   playersListArray = [...player];
-  renderPlayerList(playersListArray);
+  renderPlayerList(playersListArray, playersListContainer);
 });
 
 // event listener to select the players from the selecting list
-//playerContainer.addEventListener("click", selectPlayer);
+playersListContainer.addEventListener("click", selectPlayer);
