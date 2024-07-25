@@ -45,16 +45,27 @@ function renderPlayerList(list, target, action) {
 function selectPlayer(event) {
   let selectingPlayerCard = event.target.parentElement;
   if (selectingPlayerCard.classList[0] !== "player-card") return;
+  updateTheList(selectingPlayerCard, playersListArray, selectedPlayer);
+}
 
-  let player = playersListArray.find(
-    (card) => card["Player Name"] === selectingPlayerCard.children[0].innerHTML
+function deselectPlayer(event) {
+  let selectingPlayerCard = event.target.parentElement;
+  if (selectingPlayerCard.classList[0] !== "player-card") return;
+
+  updateTheList(selectingPlayerCard, selectedPlayer, playersListArray);
+}
+
+// this function is called from selectPlayer and deselectPlayer
+// this function will delete the player from the list and push to the other list
+function updateTheList(clickedPlayerCard, source, target) {
+  let player = source.find(
+    (card) => card["Player Name"] === clickedPlayerCard.children[0].innerHTML
   );
 
-  let index = playersListArray.indexOf(player);
-  playersListArray.splice(index, 1);
-  console.log(playersListArray);
+  let index = source.indexOf(player);
+  source.splice(index, 1);
 
-  selectedPlayer.push(player);
+  target.push(player);
 
   renderPlayerList(playersListArray, playersListContainer, "add");
   renderPlayerList(selectedPlayer, selectedPlayersContainer, "delete");
@@ -70,3 +81,6 @@ fetchPlayer(
 
 // event listener to select the players from the selecting list
 playersListContainer.addEventListener("click", selectPlayer);
+
+// event listener to select the players from the selected list
+selectedPlayersContainer.addEventListener("click", deselectPlayer);
