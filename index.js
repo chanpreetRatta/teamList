@@ -18,7 +18,9 @@ async function fetchPlayer(url) {
   return playersList;
 }
 
-function renderPlayerList(list, target) {
+function renderPlayerList(list, target, action) {
+  //this function will take an list on array, then render it to a target.
+  // action method is to decide should we add a delete button or add button at the end of the card
   target.innerHTML = "";
   list.forEach((item) => {
     const playerName = document.createElement("div");
@@ -28,13 +30,12 @@ function renderPlayerList(list, target) {
 
     playerName.classList.add("player-name");
     playerId.classList.add("player-id");
-    playerAction.classList.add("player-action");
+    playerAction.classList.add(action);
     playerAction.classList.add("selecting");
     playerCard.classList.add("player-card");
 
     playerName.textContent = item["Player Name"];
     playerId.textContent = item["CC Player Id"];
-    playerAction.textContent = "a";
 
     playerCard.append(playerName, playerId, playerAction);
     target.append(playerCard);
@@ -49,8 +50,14 @@ function selectPlayer(event) {
     (card) => card["Player Name"] === selectingPlayerCard.children[0].innerHTML
   );
 
+  let index = playersListArray.indexOf(player);
+  playersListArray.splice(index, 1);
+  console.log(playersListArray);
+
   selectedPlayer.push(player);
-  renderPlayerList(selectedPlayer, selectedPlayersContainer);
+
+  renderPlayerList(playersListArray, playersListContainer, "add");
+  renderPlayerList(selectedPlayer, selectedPlayersContainer, "delete");
 }
 
 //fetch the list of the players and spread the array into playerListArray
@@ -58,7 +65,7 @@ fetchPlayer(
   "./6th Division North Vancouver III - British Columbia Mainland Cricket League.json"
 ).then((player) => {
   playersListArray = [...player];
-  renderPlayerList(playersListArray, playersListContainer);
+  renderPlayerList(playersListArray, playersListContainer, "add");
 });
 
 // event listener to select the players from the selecting list

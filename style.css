@@ -42,7 +42,7 @@ hr{
     color: rgba(0, 0, 0, 0.643);
 }
 
-.player-card > .player-action{
+.player-card > .add, .player-card > .delete{
     grid-area: action;
     background-color: rgb(1, 107, 1);
     color: azure;
@@ -50,4 +50,16 @@ hr{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.player-card > .delete{
+    content: "delete";
+    background-color: rgba(192, 1, 1, 0.656);
+}
+
+.player-card > .add:before{
+    content: "add";
+}
+.player-card > .delete:before{
+    content: "del";
 }
