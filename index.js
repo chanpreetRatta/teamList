@@ -2,6 +2,7 @@ const playersListContainer = document.querySelector(".players-list");
 const selectedPlayersContainer = document.querySelector(
   ".selected-players-list"
 );
+const printIt = document.querySelector("#printIt");
 
 let playersListArray = [];
 let selectedPlayer = [];
@@ -71,6 +72,16 @@ function updateTheList(clickedPlayerCard, source, target) {
   renderPlayerList(selectedPlayer, selectedPlayersContainer, "delete");
 }
 
+function printTheList(event) {
+  if (event.target.id !== "printIt") return;
+
+  localStorage.setItem("selectedPlayersList", JSON.stringify(selectedPlayer));
+  if (selectedPlayer.length < 8) alert("Select at least 8 players");
+  else if (selectedPlayer.length > 12)
+    alert("Selected team has more than 12 players");
+  else location.href = "./print/print.html";
+}
+
 //fetch the list of the players and spread the array into playerListArray
 fetchPlayer(
   "./6th Division North Vancouver III - British Columbia Mainland Cricket League.json"
@@ -84,3 +95,7 @@ playersListContainer.addEventListener("click", selectPlayer);
 
 // event listener to select the players from the selected list
 selectedPlayersContainer.addEventListener("click", deselectPlayer);
+
+//print button event listener
+
+printIt.addEventListener("click", printTheList);

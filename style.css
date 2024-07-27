@@ -20,6 +20,13 @@ hr{
     width: 40%;
 }
 
+.players-list, .selected-players-list{
+    padding-right: 20px;
+    height: 60vh;
+    overflow: scroll;
+    
+}
+
 .player-card{
     display: grid;
     grid-template-rows: auto auto;
@@ -36,7 +43,7 @@ hr{
     grid-column: 1 / 2;
 }
 
-.player-card > .player-id{
+.player-id{
     grid-area: id;
     font-size: .8em;
     color: rgba(0, 0, 0, 0.643);
@@ -63,3 +70,14 @@ hr{
 .player-card > .delete:before{
     content: "del";
 }
+
+#printIt{
+    padding: 10px;
+    background-color: rgb(1, 107, 1);
+    color: white;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+
+
