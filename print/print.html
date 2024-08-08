@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="./../node_modules/normalize.css/normalize.css"
+    />
+    <link rel="stylesheet" href="print.css" />
+  </head>
+  <body>
+    <div class="pop-up-window">
+      <form action="submit" class="pop-up-window-form">
+        <div>
+          <label for="date"> Date </label>
+          <input type="date" name="date" id="date" />
+        </div>
+        <div>
+          <label for="matchNumber"> Match Number </label>
+          <input type="number" name="matchNumber" id="matchNumber" />
+        </div>
+        <div>
+          <label for="division">Division </label>
+          <input type="number" name="division" id="division" />
+        </div>
+        <div>
+          <label for="ground"> Ground Name </label>
+          <input type="text" name="ground" id="ground" />
+        </div>
+        <div>
+          <label for="homeTeam">Home Team </label>
+          <input type="text" name="homeTeam" id="homeTeam" />
+        </div>
+        <div>
+          <label for="awayTeam">Away Team </label>
+          <input type="text" name="awayTeam" id="awayTeam" />
+        </div>
+
+        <div>
+          <button id="submit-form" type="submit">Enter</button>
+        </div>
+      </form>
+    </div>
+    <div class="container hide-me"></div>
+    <div class="container hide-me"></div>
+    <div class="container hide-me"></div>
+    <div class="container hide-me"></div>
+    <script src="print.js"></script>
+  </body>
+</html>
