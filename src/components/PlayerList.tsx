@@ -1,10 +1,4 @@
-type Player = {
-  "CC Player Id": number;
-  "Player Name": string;
-  "Series And Division": string;
-  "Team Name": string;
-  "Jersey Number": number;
-};
+import type { Player } from "./types";
 
 interface Props {
   playersList: Player[];
@@ -12,10 +6,14 @@ interface Props {
 
 const PlayerList = ({ playersList }: Props) => {
   return (
-    <ul className="list-group">
+    <ul className="list-group flex-fill p-2">
       {playersList.map((player) => (
-        <li className="list-group-item" key={player["CC Player Id"]}>
+        <li
+          className="list-group-item d-flex justify-content-between"
+          key={player["CC Player Id"]}
+        >
           {player["Player Name"]}
+          <div className="add">Add</div>
         </li>
       ))}
     </ul>

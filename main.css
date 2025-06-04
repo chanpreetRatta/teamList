@@ -5,4 +5,40 @@
 
 body{
     padding: 0 1em;
+    height: 80%;
+    background-color: aliceblue;
+}
+
+.body-container{
+    margin: 3em 10em; 
+    height: 70vh;
+}
+
+.add, .captain, .vice-captain, .wicketkeeper, .print-button{
+    border-radius: 5px; 
+    padding: 3px 15px;
+    color: white;
+    cursor: pointer;
+}
+
+.add{
+    background-color: rgb(16, 121, 172);
+}
+
+.captain{
+    background-color: rgb(23, 157, 90);
+}
+
+.vice-captain{
+    background-color: rgb(238, 43, 41);
+}
+
+.wicketkeeper{
+    background-color: rgb(67, 67, 67);
+}
+
+.print-button{
+    width: fit-content;
+    padding: 5px 20px;
+    background-color: rgb(16, 121, 172);
 }

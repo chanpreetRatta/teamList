@@ -50,9 +50,9 @@ const Body = () => {
     },
   ]);
   return (
-    <div className="m-5 d-flex">
+    <div className="body-container d-flex">
       <PlayerList playersList={playersList}></PlayerList>
-      <SelectedPlayers></SelectedPlayers>
+      <SelectedPlayers playerList={selectedPlayers}></SelectedPlayers>
     </div>
   );
 };
