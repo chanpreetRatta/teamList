@@ -3,10 +3,14 @@
 import axios from "axios";
 
 const getPlayers = () => {
-    const baseURL = "./players.json"; 
-    const response = axios.get(baseURL); 
+    const baseURL = "./players.json"
+   
+    const response =  axios.get(baseURL)
+    .then(res => res.data)
+    .catch(err => err); 
 
-    return response
+
+    return response; 
 }
 
 export default getPlayers; 
