@@ -31,19 +31,23 @@ const Body = () => {
 
   return (
     <>
-      <div className="body-container d-flex justify-content-between">
-        <PlayerList
-          playersList={playersList}
-          selectPlayer={(player: Player) => handlePlayersSelection(player)}
-          totalPlayers={playersList.length}
-        ></PlayerList>
-        <SelectedPlayers
-          playerList={selectedPlayers}
-          deletePlayer={(player: Player) => handleDeletePlayer(player)}
-          totalPlayers={selectedPlayers.length}
-        ></SelectedPlayers>
+      <div className="container mt-5">
+        <div className="row first-row-body">
+          <PlayerList
+            playersList={playersList}
+            selectPlayer={(player: Player) => handlePlayersSelection(player)}
+            totalPlayers={playersList.length}
+          ></PlayerList>
+          <SelectedPlayers
+            playerList={selectedPlayers}
+            deletePlayer={(player: Player) => handleDeletePlayer(player)}
+            totalPlayers={selectedPlayers.length}
+          ></SelectedPlayers>
+        </div>
+        <div className="row pt-4">
+          <PrintButton totalPlayers={selectedPlayers.length}></PrintButton>
+        </div>
       </div>
-      <PrintButton totalPlayers={selectedPlayers.length}></PrintButton>
     </>
   );
 };

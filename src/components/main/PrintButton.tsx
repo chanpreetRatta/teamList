@@ -3,14 +3,15 @@ interface Props {
 }
 
 const PrintButton = ({ totalPlayers }: Props) => {
-  console.log(totalPlayers);
   return (
-    <button
-      className="btn btn-success print-button"
-      disabled={totalPlayers < 9 || totalPlayers > 12}
-    >
-      Print
-    </button>
+    <div className="row justify-content-end">
+      <button
+        className="col-1 btn btn-success print-button"
+        disabled={totalPlayers < 9 || totalPlayers > 12}
+      >
+        Print
+      </button>
+    </div>
   );
 };
 

@@ -14,9 +14,8 @@ const SelectedPlayers = ({ playerList, deletePlayer, totalPlayers }: Props) => {
     "Then Select the rest of the team",
   ];
   return (
-    <div className="flex-fill p-2 overflow-scroll">
+    <div className="col">
       <h3>Total Selected Players - {totalPlayers}</h3>
-
       {playerList.length === 0 && (
         <ul className="list-group">
           {messages.map((message) => (
@@ -27,8 +26,8 @@ const SelectedPlayers = ({ playerList, deletePlayer, totalPlayers }: Props) => {
         </ul>
       )}
 
-      <div className="selected-players d-flex flex-column justify-content-between">
-        <ul className=" list-group ">
+      <div>
+        <ul className="list-group">
           {playerList.map((player) => (
             <li
               className="list-group-item d-flex justify-content-between"
@@ -37,7 +36,7 @@ const SelectedPlayers = ({ playerList, deletePlayer, totalPlayers }: Props) => {
               {player["Player Name"]}
               <div className="attribute d-flex">
                 <div
-                  className="vice-captain me-1"
+                  className="delete me-1"
                   onClick={() => deletePlayer(player)}
                 >
                   Del

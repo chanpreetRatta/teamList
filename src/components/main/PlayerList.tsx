@@ -8,10 +8,10 @@ interface Props {
 
 const PlayerList = ({ playersList, selectPlayer, totalPlayers }: Props) => {
   return (
-    <div className="flex-fill p-2 overflow-scroll">
+    <div className="col">
       <h3>Total Players - {totalPlayers}</h3>
 
-      <ul className="list-group player-list ">
+      <ul className="list-group">
         {playersList.map((player) => (
           <li
             className="list-group-item d-flex justify-content-between"
