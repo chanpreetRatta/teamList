@@ -1,19 +1,20 @@
 import { useEffect, useState } from "react";
 import PlayerList from "./PlayerList";
 import SelectedPlayers from "./SelectedPlayers";
-import getPlayers from "../services/api-client";
-import type { Player } from "./types";
+import services from "../../services/services";
+import type { Player } from "../types";
 import PrintButton from "./PrintButton";
 
 const Body = () => {
   const [playersList, setPlayersList] = useState<Player[]>([]);
   const [selectedPlayers, setSelectedPlayers] = useState<Player[]>([]);
-  const [errors, setErrors] = useState([]);
+  const [errors, setErrors] = useState("");
 
   useEffect(() => {
-    getPlayers()
-      .then((res) => setPlayersList(res))
-      .catch((err) => setErrors(err));
+    const { request } = services.getAllPlayers();
+    request
+      .then((res) => setPlayersList(res.data))
+      .catch((err) => setErrors(err.message));
   }, []);
 
   const handlePlayersSelection = (player: Player) => {
@@ -25,6 +26,8 @@ const Body = () => {
     setPlayersList([...playersList, player]);
     setSelectedPlayers(selectedPlayers.filter((i) => i !== player));
   };
+
+  if (errors) return <div className="text-danger">{errors}</div>;
 
   return (
     <>

@@ -31,10 +31,7 @@ body{
 
 
 .print-button{
-    border: none;
-    width: fit-content;
-    padding: 5px 20px;
-    background-color: rgb(16, 121, 172);
+    padding: 5px 30px;
 }
 
 

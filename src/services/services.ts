@@ -1,7 +1,7 @@
 import apiClient from "./api-client";
 
 class Players {
-    getAllPlayer() {
+    getAllPlayers() {
         const controller = new AbortController(); 
         const request = apiClient.get("", {signal: controller.signal}); 
 

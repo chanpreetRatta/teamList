@@ -1,16 +1,7 @@
-// implement the cancel button later. For now just add the api services
+import axios, {CanceledError} from "axios";
 
-import axios from "axios";
+export default axios.create({
+    baseURL: "players.json"
+})
 
-const getPlayers = () => {
-    const baseURL = "./players.json"
-   
-    const response =  axios.get(baseURL)
-    .then(res => res.data)
-    .catch(err => err); 
-
-
-    return response; 
-}
-
-export default getPlayers; 
+export {CanceledError}; 

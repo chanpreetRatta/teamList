@@ -5,7 +5,10 @@ interface Props {
 const PrintButton = ({ totalPlayers }: Props) => {
   console.log(totalPlayers);
   return (
-    <button className="print-button mt-4 align-self-end" disabled>
+    <button
+      className="btn btn-success print-button"
+      disabled={totalPlayers < 9 || totalPlayers > 12}
+    >
       Print
     </button>
   );

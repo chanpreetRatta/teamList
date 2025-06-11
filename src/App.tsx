@@ -1,6 +1,6 @@
-import Header from "./components/Header";
+import Header from "./components/main/Header";
 
-import Body from "./components/Body";
+import Body from "./components/main/Body";
 
 const App = () => {
   return (
