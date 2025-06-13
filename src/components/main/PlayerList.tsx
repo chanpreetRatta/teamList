@@ -9,7 +9,7 @@ interface Props {
 const PlayerList = ({ playersList, selectPlayer, totalPlayers }: Props) => {
   return (
     <div className="col">
-      <h3>Total Players - {totalPlayers}</h3>
+      <h3>Total Available Players - {totalPlayers}</h3>
 
       <ul className="list-group">
         {playersList.map((player) => (

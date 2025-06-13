@@ -16,7 +16,7 @@ const Header = ({ children }: Props) => {
   // Render the component UI
   return (
     // Use a <span> as a flex container to layout the heading and date horizontally
-    <span className="d-flex justify-content-between align-items-center">
+    <span className="d-flex justify-content-between align-items-center mb-5">
       {/* Render the children prop as an <h2> heading */}
       <h2>{children}</h2>
       {/* Display the current day and month in a <p> tag */}

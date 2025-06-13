@@ -1,5 +1,4 @@
 import Header from "./components/main/Header";
-
 import Body from "./components/main/Body";
 
 const App = () => {

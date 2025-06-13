@@ -31,7 +31,7 @@ const Body = () => {
 
   return (
     <>
-      <div className="container mt-5">
+      <div className="container">
         <div className="row first-row-body">
           <PlayerList
             playersList={playersList}
