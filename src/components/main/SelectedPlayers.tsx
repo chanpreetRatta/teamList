@@ -14,7 +14,7 @@ const SelectedPlayers = ({ playerList, deletePlayer, totalPlayers }: Props) => {
     "Then Select the rest of the team",
   ];
   return (
-    <div className="col">
+    <div className="col h-100 overflow-auto">
       <h3>Total Selected Players - {totalPlayers}</h3>
       {playerList.length === 0 && (
         <ul className="list-group">
