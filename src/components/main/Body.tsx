@@ -18,13 +18,22 @@ const Body = () => {
   }, []);
 
   const handlePlayersSelection = (player: Player) => {
-    setSelectedPlayers([...selectedPlayers, player]);
-    setPlayersList(playersList.filter((i) => i !== player));
+    const selected = [...selectedPlayers, player];
+    const list = playersList.filter((i) => i !== player);
+
+    setSelectedPlayers(selected);
+    setPlayersList(list);
+    localStorage.setItem("teamList", JSON.stringify(selected));
   };
 
   const handleDeletePlayer = (player: Player) => {
-    setPlayersList([...playersList, player]);
-    setSelectedPlayers(selectedPlayers.filter((i) => i !== player));
+    const deleted = [...playersList, player];
+    const selected = selectedPlayers.filter((i) => i !== player);
+
+    setPlayersList(deleted);
+    setSelectedPlayers(selected);
+
+    localStorage.setItem("teamList", JSON.stringify(selected));
   };
 
   if (errors) return <div className="text-danger">{errors}</div>;

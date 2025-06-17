@@ -6,3 +6,11 @@ export type Player = {
   "Jersey Number": number;
 };
 
+export type GroundFormInputs = {
+  date: Date;
+  matchNumber: number;
+  division: string;
+  home: string;
+  away: string;
+};
+
