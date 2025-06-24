@@ -1,0 +1,9 @@
+.container .print {
+    font-size: .8rem;
+}
+.print > p,
+.print  .row,
+.print  .row > *{
+    border: 1px solid black;
+}
+

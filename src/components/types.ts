@@ -3,11 +3,11 @@ export type Player = {
   "Player Name": string;
   "Series And Division": string;
   "Team Name": string;
-  "Jersey Number": number;
+  "Jersey Number": number | string;
 };
 
 export type GroundFormInputs = {
-  date: Date;
+  date: string;
   matchNumber: number;
   division: string;
   home: string;

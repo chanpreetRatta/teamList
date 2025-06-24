@@ -41,7 +41,7 @@ const Body = () => {
   return (
     <>
       <div className="container">
-        <div className="row first-row-body">
+        <div className="row first-row-body overflow-scroll">
           <PlayerList
             playersList={playersList}
             selectPlayer={(player: Player) => handlePlayersSelection(player)}

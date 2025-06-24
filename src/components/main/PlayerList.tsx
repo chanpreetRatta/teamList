@@ -8,7 +8,7 @@ interface Props {
 
 const PlayerList = ({ playersList, selectPlayer, totalPlayers }: Props) => {
   return (
-    <div className="col h-100 overflow-auto">
+    <div className="col-sm  h-100 overflow-auto">
       <h3>Total Available Players - {totalPlayers}</h3>
 
       <ul className="list-group">
@@ -19,7 +19,7 @@ const PlayerList = ({ playersList, selectPlayer, totalPlayers }: Props) => {
           >
             {player["Player Name"]}
             <div className="add" onClick={() => selectPlayer(player)}>
-              Add
+              ADD
             </div>
           </li>
         ))}
