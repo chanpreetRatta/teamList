@@ -91,7 +91,17 @@ export const PrintList = () => {
     },
   ];
   return (
-    <div className="container print">
+    <div className="container-fluid w-100 print">
+      <div className="row">
+        <div className="col">
+          <PrintHeader groundInfo={groundInfo}></PrintHeader>
+          <PrintBody players={players} />
+        </div>
+        <div className="col">
+          <PrintHeader groundInfo={groundInfo}></PrintHeader>
+          <PrintBody players={players} />
+        </div>
+      </div>
       <div className="row">
         <div className="col">
           <PrintHeader groundInfo={groundInfo}></PrintHeader>
