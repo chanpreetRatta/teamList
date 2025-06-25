@@ -6,7 +6,6 @@ import type { GroundFormInputs } from "../types";
 const GroundInputForm = () => {
   const navigator = useNavigate();
   const onSubmit = (info: GroundFormInputs) => {
-    console.log(info);
     localStorage.setItem("groundInfo", JSON.stringify(info));
     navigator("/print");
   };
