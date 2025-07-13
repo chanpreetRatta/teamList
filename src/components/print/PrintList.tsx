@@ -10,6 +10,7 @@ export const PrintList = () => {
     date: "",
     matchNumber: 0,
     division: "",
+    ground: "",
     home: "",
     away: "",
   });
@@ -23,7 +24,7 @@ export const PrintList = () => {
   }, []);
   return (
     <div className="container-fluid w-100 print">
-      <div className="row">
+      <div className="row gap-2">
         <div className="col">
           <PrintHeader groundInfo={groundInfo}></PrintHeader>
           <PrintBody players={players} />
@@ -33,7 +34,7 @@ export const PrintList = () => {
           <PrintBody players={players} />
         </div>
       </div>
-      <div className="row">
+      <div className="row gap-2">
         <div className="col">
           <PrintHeader groundInfo={groundInfo}></PrintHeader>
           <PrintBody players={players} />

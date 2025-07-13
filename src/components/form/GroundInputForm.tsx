@@ -45,6 +45,15 @@ const GroundInputForm = () => {
             />
           </div>
           <div className="form-group mb-4">
+            <label htmlFor="division">Ground</label>
+            <input
+              {...register("ground")}
+              type="text"
+              className="form-control"
+              id="division"
+            />
+          </div>
+          <div className="form-group mb-4">
             <label htmlFor="home">Home</label>
             <input
               {...register("home")}

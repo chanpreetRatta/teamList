@@ -10,6 +10,7 @@ export type GroundFormInputs = {
   date: string;
   matchNumber: number;
   division: string;
+  ground: string; 
   home: string;
   away: string;
 };
